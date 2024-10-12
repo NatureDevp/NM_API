@@ -5,16 +5,22 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Plant extends Model
+class RequestPlant extends Model
 {
     use HasFactory;
 
+
     protected $fillable = [
-        'name',
+        'user_id',
+        'plant_name',
         'scientific',
         'description',
-        'likes',
-        'status',
-        'image',
+        'image_path',
     ];
+
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
