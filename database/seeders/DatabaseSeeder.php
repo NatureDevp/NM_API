@@ -21,5 +21,6 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call(PlantSeeder::class);
         $this->call(RemedySeeder::class);
+        $this->call(RequestPlantSeeder::class);
     }
 }

@@ -12,13 +12,29 @@ class PlantController extends Controller
 
     public function index()
     {
-        $plants = Plant::all();
 
-        return response()->json([
-            'success' => true,
-            'message' => 'Plants retrieved successfully',
-            'data' => $plants,
-        ], 200);
+        try {
+            $plants = Plant::all();
+
+            if ($plants->isEmpty()) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'No plants found',
+                ], 404);
+            }
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Plants retrieved successfully',
+                'data' => $plants,
+            ], 200);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'An internal server error occurred',
+                'error' => $e->getMessage(),
+            ], 500);
+        }
     }
 
     public function store(StorePlantRequest $request)
@@ -38,6 +54,10 @@ class PlantController extends Controller
         //
     }
 
+    public function upload()
+    {
+        //
+    }
 
     public function destroy(Plant $plant)
     {

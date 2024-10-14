@@ -45,6 +45,11 @@ class RemedyController extends Controller
         //
     }
 
+    public function upload()
+    {
+        //
+    }
+
     /**
      * Remove the specified resource from storage.
      */

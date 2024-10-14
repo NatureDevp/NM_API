@@ -17,7 +17,9 @@ return new class extends Migration
             $table->string('plant_name');
             $table->string('scientific');
             $table->text('description');
+            $table->unsignedBigInteger('handle_by')->nullable(true)->foreignId('users')->onDelete('set null')->constrained();
             $table->text('image_path');
+            $table->text('status')->default('Pending');
             $table->timestamps();
         });
     }

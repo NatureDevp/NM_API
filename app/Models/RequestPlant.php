@@ -15,7 +15,9 @@ class RequestPlant extends Model
         'plant_name',
         'scientific',
         'description',
+        'handle_by',
         'image_path',
+        'status',
     ];
 
 
