@@ -4,7 +4,6 @@ use App\Http\Controllers\API\V1\PlantController;
 use App\Http\Controllers\API\V1\RemedyController;
 use App\Http\Controllers\API\V1\RequestPlantController;
 use App\Http\Controllers\AuthController;
-use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Route;
 
 
@@ -25,6 +24,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
         Route::post('/remedies/upload', [RemedyController::class, 'upload']);
 
         Route::apiResource('/requests', RequestPlantController::class);
+        Route::get('/requests/workplace/{id}', [RequestPlantController::class, 'workplace']);
         Route::post('/requests/upload', [RequestPlantController::class, 'upload']);
     });
 });

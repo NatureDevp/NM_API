@@ -6,7 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\RequestPlant;
 use App\Http\Requests\StoreRequestPlantRequest;
 use App\Http\Requests\UpdateRequestPlantRequest;
-use App\Models\Plant;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Request;
 
 class RequestPlantController extends Controller
 {
@@ -37,6 +38,7 @@ class RequestPlantController extends Controller
         }
     }
 
+
     /**
      * Store a newly created resource in storage.
      */
@@ -61,15 +63,43 @@ class RequestPlantController extends Controller
         //
     }
 
-    public function upload()
-    {
-        //
-    }
+
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(RequestPlant $requestPlant)
     {
         //
+    }
+
+    public function upload()
+    {
+        //
+    }
+
+    public function workplace($id)
+    {
+        try {
+            $requestPlant = RequestPlant::where('handle_by', $id)->get();
+
+            if ($requestPlant->isEmpty() || $id) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'No request found for this admin',
+                ], 404);
+            }
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Workplace requests retrieved successfully',
+                'data' => $requestPlant,
+            ], 200);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'An internal server error occurred',
+                'error' => $e->getMessage(),
+            ], 500);
+        }
     }
 }
