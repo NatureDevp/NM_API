@@ -4,7 +4,6 @@ use App\Http\Controllers\API\V1\PlantController;
 use App\Http\Controllers\API\V1\RemedyController;
 use App\Http\Controllers\API\V1\RequestPlantController;
 use App\Http\Controllers\AuthController;
-use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Route;
 
 
