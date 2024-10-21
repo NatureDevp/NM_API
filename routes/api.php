@@ -24,6 +24,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
         Route::post('/remedies/upload', [RemedyController::class, 'upload']);
 
         Route::apiResource('/requests', RequestPlantController::class);
+        Route::get('/requests/workplace/{id}', [RequestPlantController::class, 'workplace']);
         Route::post('/requests/upload', [RequestPlantController::class, 'upload']);
     });
 });
