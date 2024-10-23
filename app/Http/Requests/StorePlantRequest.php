@@ -11,7 +11,7 @@ class StorePlantRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,11 @@ class StorePlantRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|string|max:255',
+            'scientific' => 'required|string|max:255',
+            'description' => 'nullable|string',
+            'ailment' => 'nullable|string',
+            'image' => 'image|mimes:jpeg,png,jpg|max:2048',
         ];
     }
 }

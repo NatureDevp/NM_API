@@ -42,7 +42,7 @@ class AuthController extends Controller
         }
 
         $validatedData = $validator->validated();
-        $user = User::where('email', $request->email)->first();
+        $user = User::where('email', $validatedData['email'])->first();
 
         if (!$user) {
             return response()->json(['success' => false, 'message' => 'Email doesn\'t exist.'], 422);

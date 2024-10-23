@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name')->nullable(false);
             $table->string('scientific')->unique()->nullable(false);
             $table->text('description')->nullable(false);
+            $table->string('ailment')->nullable(true);
             $table->unsignedBigInteger('likes')->default(0);
             $table->string('status')->default('active');
             $table->string('image')->nullable(false);

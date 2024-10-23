@@ -13,6 +13,7 @@ class Plant extends Model
         'name',
         'scientific',
         'description',
+        'ailment',
         'likes',
         'status',
         'image',
