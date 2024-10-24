@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('ailment')->nullable(true);
             $table->unsignedBigInteger('likes')->default(0);
             $table->string('status')->default('active');
-            $table->string('image')->nullable(false);
+            $table->string('cover')->nullable(false);
+            $table->unsignedBigInteger('images');
             $table->timestamps();
         });
     }

@@ -16,6 +16,7 @@ class Plant extends Model
         'ailment',
         'likes',
         'status',
-        'image',
+        'cover',
+        'images',
     ];
 }

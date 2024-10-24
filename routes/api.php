@@ -18,7 +18,8 @@ Route::prefix('/auth')->group(function () {
 Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::prefix('/v1')->group(function () {
         Route::apiResource('/plants', PlantController::class);
-        Route::post('/plants/upload', [PlantController::class, 'upload']);
+        Route::post('/plants/upload/cover', [PlantController::class, 'uploadCover']);
+        Route::post('/plants/upload/images', [PlantController::class, 'uploadImages']);
 
         Route::apiResource('/remedies', RemedyController::class);
         Route::post('/remedies/upload', [RemedyController::class, 'upload']);
