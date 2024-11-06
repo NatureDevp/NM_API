@@ -4,14 +4,15 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    /** @use HasFactory<\Database\Factories\UserFactory> */
+    use HasFactory, Notifiable, HasApiTokens;
 
     /**
      * The attributes that are mass assignable.
@@ -21,9 +22,11 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
-        'type',
-        'status',
+        'role',
         'password',
+        'avatar',
+        'status',
+
     ];
 
     /**
@@ -49,8 +52,8 @@ class User extends Authenticatable
         ];
     }
 
-    public function request_plant(): HasOne
+    public function plants(): HasMany
     {
-        return $this->hasOne(RequestPlant::class);
+        return $this->hasMany(Plant::class);
     }
 }

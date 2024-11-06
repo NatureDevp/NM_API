@@ -2,9 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\RequestPlant;
+use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class RequestPlantSeeder extends Seeder
 {
@@ -13,117 +14,112 @@ class RequestPlantSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('request_plants')->insert([
+        $admins = User::where('role', 'admin')->get();
+        $users = User::where('role', 'user')->get();
+
+        // Define plant request data
+        $requestPlantsData = [
             [
-                'user_id' => 1,
                 'plant_name' => 'Aloe Vera',
-                'scientific' => 'Aloe barbadensis miller',
-                'description' => 'Aloe Vera is known for its healing and soothing properties.',
-                'handle_by' => null,
-                'image_path' => 'images/aloe_vera.jpg',
-                'status' => 'Pending',
+                'scientific_name' => 'Aloe barbadensis miller',
+                'description' => 'Aloe vera is known for its soothing and healing properties for skin conditions.',
+                'additional_info' => 'Used in various skincare products for hydration.',
+                'is_accepted' => true,
+                'status' => 'In Progress',
+                'request_by' => $users[0]->id,
+                'accept_by' => $admins[0]->id,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'user_id' => 2,
-                'plant_name' => 'Lavender',
-                'scientific' => 'Lavandula angustifolia',
-                'description' => 'Lavender is commonly used for aromatherapy and relaxation.',
-                'handle_by' => 1,
-                'image_path' => 'images/lavender.jpg',
-                'status' => 'Ongoing',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 1,
-                'plant_name' => 'Chamomile',
-                'scientific' => 'Matricaria chamomilla',
-                'description' => 'Chamomile is used for making tea that helps with sleep.',
-                'handle_by' => null,
-                'image_path' => 'images/chamomile.jpg',
-                'status' => 'Pending',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 2,
                 'plant_name' => 'Peppermint',
-                'scientific' => 'Mentha piperita',
-                'description' => 'Peppermint is often used for its refreshing flavor and digestive benefits.',
-                'handle_by' => null,
-                'image_path' => 'images/peppermint.jpg',
+                'scientific_name' => 'Mentha piperita',
+                'description' => 'Peppermint is used for treating headaches, digestive issues, and as a natural air freshener.',
+                'additional_info' => 'Often used in teas and essential oils.',
+                'is_accepted' => false,
                 'status' => 'Pending',
+                'request_by' => $users[1]->id,
+                'accept_by' => null,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'user_id' => 3,
-                'plant_name' => 'Rosemary',
-                'scientific' => 'Rosmarinus officinalis',
-                'description' => 'Rosemary is a popular herb in cooking and has medicinal properties.',
-                'handle_by' => 1,
-                'image_path' => 'images/rosemary.jpg',
-                'status' => 'Ongoing',
+                'plant_name' => 'Berries',
+                'scientific_name' => 'Vaccinium uliginosum',
+                'description' => 'Berries are often used in herbal remedies and treat skin conditions.',
+                'additional_info' => 'Helps in sleep, digestion, and reducing anxiety.',
+                'is_accepted' => true,
+                'status' => 'In Progress',
+                'request_by' => $users[2]->id,
+                'accept_by' => $admins[1]->id,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'user_id' => 1,
-                'plant_name' => 'Basil',
-                'scientific' => 'Ocimum basilicum',
-                'description' => 'Basil is widely used in culinary dishes, especially in Italian cuisine.',
-                'handle_by' => 1,
-                'image_path' => 'images/basil.jpg',
-                'status' => 'Ongoing',
+                'plant_name' => 'Cucumber',
+                'scientific_name' => 'Cucumis sativus',
+                'description' => 'Cucumber is commonly used to treat cough, sore throat, and flu symptoms.',
+                'additional_info' => 'Helps in sleep, digestion, and reducing anxiety.',
+                'is_accepted' => true,
+                'status' => 'Completed',
+                'request_by' => $users[3]->id,
+                'accept_by' => $admins[1]->id,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'user_id' => 2,
-                'plant_name' => 'Thyme',
-                'scientific' => 'Thymus vulgaris',
-                'description' => 'Thyme is used for both culinary and medicinal purposes.',
-                'handle_by' => null,
-                'image_path' => 'images/thyme.jpg',
-                'status' => 'Pending',
+                'plant_name' => 'Lemon',
+                'scientific_name' => 'Citrus limon',
+                'description' => 'Lemon is commonly used to treat cough, sore throat, and flu symptoms.',
+                'additional_info' => 'Helps in sleep, digestion, and reducing anxiety.',
+                'is_accepted' => true,
+                'status' => 'Completed',
+                'request_by' => $users[3]->id,
+                'accept_by' => $admins[1]->id,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'user_id' => 3,
-                'plant_name' => 'Sage',
-                'scientific' => 'Salvia officinalis',
-                'description' => 'Sage is an herb known for its earthy flavor and medicinal use.',
-                'handle_by' => 1,
-                'image_path' => 'images/sage.jpg',
-                'status' => 'Ongoing',
+                'plant_name' => 'Chamomile',
+                'scientific_name' => 'Matricaria chamomilla',
+                'description' => 'Chamomile is well-known for its relaxing effects and is often used in teas.',
+                'additional_info' => 'Helps in sleep, digestion, and reducing anxiety.',
+                'is_accepted' => true,
+                'status' => 'In Progress',
+                'request_by' => $users[2]->id,
+                'accept_by' => $admins[1]->id,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'user_id' => 1,
-                'plant_name' => 'Eucalyptus',
-                'scientific' => 'Eucalyptus globulus',
-                'description' => 'Eucalyptus leaves are used for their refreshing aroma and health benefits.',
-                'handle_by' => null,
-                'image_path' => 'images/eucalyptus.jpg',
-                'status' => 'Pending',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 2,
                 'plant_name' => 'Ginger',
-                'scientific' => 'Zingiber officinale',
-                'description' => 'Ginger is known for its spicy flavor and digestive benefits.',
-                'handle_by' => null,
-                'image_path' => 'images/ginger.jpg',
-                'status' => 'Pending',
+                'scientific_name' => 'Zingiber officinale',
+                'description' => 'Ginger is commonly used to reduce nausea, improve digestion, and fight infections.',
+                'additional_info' => 'Often used in teas, soups, and remedies for colds.',
+                'is_accepted' => true,
+                'status' => 'In Progress',
+                'request_by' => $users[3]->id,
+                'accept_by' => $admins[0]->id,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
-        ]);
+            [
+                'plant_name' => 'Eucalyptus',
+                'scientific_name' => 'Eucalyptus globulus',
+                'description' => 'Eucalyptus is known for its respiratory benefits and often used in cough relief.',
+                'additional_info' => 'Commonly found in throat lozenges and steam inhalations.',
+                'is_accepted' => false,
+                'status' => 'Pending',
+                'request_by' => $users[4]->id,
+                'accept_by' => null,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+        ];
+
+        // Insert each request plant data
+        foreach ($requestPlantsData as $data) {
+            RequestPlant::create($data);
+        }
     }
 }

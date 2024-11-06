@@ -42,13 +42,6 @@ return [
         ],
     ],
 
-    // Adding Sanctum for API guard
-    'api' => [
-        'driver' => 'sanctum', // Using Sanctum for API token authentication
-        'provider' => 'users',
-    ],
-
-
     /*
     |--------------------------------------------------------------------------
     | User Providers
