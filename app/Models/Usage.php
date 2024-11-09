@@ -11,8 +11,8 @@ class Usage extends Model
     protected $fillable = [
 
         'name',
-        'type',
         'description',
+        'remedy_id'
     ];
 
     public function remedy(): BelongsToMany

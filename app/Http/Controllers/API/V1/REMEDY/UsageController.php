@@ -32,7 +32,6 @@ class UsageController extends Controller
         // 'description',
         $customMessages = [
             'name.required' => 'Required. Usage name is required.',
-            'type.required' => 'Required. Usage type is required.',
             'description.required' => 'Required. Usage description is required.',
             'remedy_id.required' => 'Required. Remedy id is required.',
             'remedy_id.exists' => 'Invalid. Remedy id does not exist.',
@@ -40,7 +39,6 @@ class UsageController extends Controller
 
         $validation = [
             'name' => 'required|string',
-            'type' => 'required|string',
             'description' => 'required|string',
             'remedy_id' => 'required|exists:remedies,id',
         ];

@@ -33,7 +33,6 @@ class IngredientController extends Controller
         // 'remedy_id',
         $customMessage = [
             'name.required' => 'Name is required.',
-            'quantity.required' => 'Quantity is required.',
             'description.required' => 'Description is required.',
             'remedy_id.required' => 'Remedy is required.',
             'remedy_id.exists' => 'Invalid. Remedy id does not exist.',
@@ -41,12 +40,11 @@ class IngredientController extends Controller
 
         $validation = [
             'name' => 'required|string',
-            'quantity' => 'required|string',
             'description' => 'required|string',
             'remedy_id' => 'required|exists:remedies,id',
         ];
 
-        $request->validate($request, $validation, $customMessage);
+        $request->validate($validation, $customMessage);
 
         $ingredient = Ingredient::create($request->all());
         return response()->json(['success' => true, 'message' => 'Ingredient created successfully.', 'data' => $ingredient], 201);

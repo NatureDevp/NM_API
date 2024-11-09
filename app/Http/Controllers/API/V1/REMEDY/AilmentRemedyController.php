@@ -27,8 +27,22 @@ class AilmentRemedyController extends Controller
      */
     public function store(Request $request)
     {
+
+        $customMessages = [
+            'name.required' => 'Required. Ailment name is required.',
+            'description.required' => 'Required. Ailment description is required.',
+            'remedy_id.required' => 'Required. Plant id is required.',
+            'remedy_id.exists' => 'Invalid. Plant id does not exist.',
+        ];
+
+        $validation = [
+            'name' => 'required|string',
+            'description' => 'required|string',
+            'remedy_id' => 'required|exists:remedies,id',
+        ];
+        $request->validate($validation, $customMessages);
         $ailment_Remedy = Ailment_Remedy::create($request->all());
-        return response()->json(['success' => true, 'message' => 'Ailment_Remedy created successfully.', 'data' => $ailment_Remedy], 201);
+        return response()->json(['success' => true, 'message' => 'Ailment_Remedy created successfully.', 'data' => $ailment_Remedy], 200);
     }
 
     /**

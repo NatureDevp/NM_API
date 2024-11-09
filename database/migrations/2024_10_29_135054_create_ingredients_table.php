@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('ingredients', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
-            $table->integer('quantity')->default(0);
+            $table->integer('quantity')->nullable()->default(0);
             $table->text('description')->nullable(false);
 
             // Foreign keys

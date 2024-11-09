@@ -45,16 +45,14 @@ class RemedyController extends Controller
             'name' => 'required|string',
             'type' => 'required|string',
             'description' => 'required|string',
-            'status' => 'string|in:Active,Inactive',
-            'cover' => 'required|image',
-            'ratings' => 'required|integer',
+            'cover' => 'image',
             'plant_id' => 'required|exists:plants,id',
             'updated_by' => 'required|exists:users,id',
             'created_by' => 'required|exists:users,id',
         ];
 
 
-        $request->validated($validation, $customMessage);
+        $request->validate($validation, $customMessage);
 
 
 
@@ -67,11 +65,9 @@ class RemedyController extends Controller
             'name' => $request->name,
             'type' => $request->type,
             'description' => $request->description,
-            'status' => $request->status,
             'cover' => $coverPath,
-            'ratings' => $request->ratings,
             'plant_id' => $request->plant_id,
-            'updated_by' => $request->updated_by,
+            'updated_by' => $request->created_by,
             'created_by' => $request->created_by,
         ]);
 

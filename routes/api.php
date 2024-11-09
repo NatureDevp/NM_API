@@ -12,10 +12,6 @@ use App\Http\Controllers\API\V1\REMEDY\StepController;
 use App\Http\Controllers\API\V1\REMEDY\UsageController;
 use App\Http\Controllers\API\V1\REQUEST\RequestPlantController;
 use App\Http\Controllers\UserController;
-use App\Models\Ailment_Plant;
-use App\Models\Ailment_Remedy;
-use App\Models\RequestPlant;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 

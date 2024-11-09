@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('ailment__remedies', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable(false);
-            $table->string('type')->nullable(false);
+            $table->string('type')->nullable();
             $table->string('description')->nullable(false);
             $table->foreignId('remedy_id')->constrained('remedies')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();

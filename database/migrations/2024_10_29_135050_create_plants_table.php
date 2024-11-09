@@ -23,6 +23,7 @@ return new class extends Migration
             // Foreign keys
             $table->foreignId('updated_by')->nullable()->constrained('users')->nullOnDelete()->nullOnUpdate();
             $table->foreignId('created_by')->constrained('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('request_id')->nullable()->constrained('request_plants')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

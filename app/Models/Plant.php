@@ -21,6 +21,7 @@ class Plant extends Model
         'likes',
         'updated_by',
         'created_by',
+        'request_id',
     ];
 
 
@@ -47,5 +48,10 @@ class Plant extends Model
     public function userUpdateBy(): BelongsTo
     {
         return $this->belongsTo(User::class, 'created_by', 'id');
+    }
+
+    public function requests(): BelongsTo
+    {
+        return $this->belongsTo(RequestPlant::class, 'request_id', 'id');
     }
 }
