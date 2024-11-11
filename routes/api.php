@@ -1,73 +1,71 @@
 <?php
 
-use App\Http\Controllers\API\AUTH\Authentication;
-use App\Http\Controllers\API\V1\PLANT\AilmentPlantController;
-use App\Http\Controllers\API\V1\PLANT\ImagePlantController;
-use App\Http\Controllers\API\V1\PLANT\PlantController;
-use App\Http\Controllers\API\V1\REMEDY\AilmentRemedyController;
-use App\Http\Controllers\API\V1\REMEDY\ImageRemedyController;
-use App\Http\Controllers\API\V1\REMEDY\IngredientController;
-use App\Http\Controllers\API\V1\REMEDY\RemedyController;
-use App\Http\Controllers\API\V1\REMEDY\StepController;
-use App\Http\Controllers\API\V1\REMEDY\UsageController;
-use App\Http\Controllers\API\V1\REQUEST\RequestPlantController;
+use App\Http\Controllers\AuthenticationController;
+use App\Http\Controllers\PlantImagesPathController;
+use App\Http\Controllers\PlantPlantsController;
+use App\Http\Controllers\RemedyImagesPathController;
+use App\Http\Controllers\RemedyRemediesController;
+use App\Http\Controllers\RequestImagesPathController;
+use App\Http\Controllers\RequestRequestsController;
 use App\Http\Controllers\UserController;
+use App\Models\Plant_Plants;
+use App\Models\User;
+use Illuminate\Container\Attributes\Auth;
 use Illuminate\Support\Facades\Route;
 
 
-Route::prefix('auth')->group(function () {
-    Route::post('/register', [Authentication::class, 'signup']);
-    Route::post('/login', [Authentication::class, 'login']);
-    Route::post('/logout', [Authentication::class, 'logout'])->middleware('auth:sanctum');
-    Route::get('/session', [Authentication::class, 'session']);
-    Route::post('/searchEmail', [Authentication::class, 'searchEmail']);
-    Route::post('/resetPassword', [Authentication::class, 'reset']);
-});
 
 
-Route::middleware('auth:sanctum')->prefix('v2')->group(function () {
-    Route::apiResource('/plants', PlantController::class);
-    Route::post('/plants/update/{id}', [PlantController::class, 'updateAll']);
-});
 
-Route::middleware('auth:sanctum')->prefix('v2')->group(function () {
-    Route::apiResource('/remedies', RemedyController::class);
-    Route::post('/remedies/update/{id}', [RemedyController::class, 'updateAll']);
-});
-
-Route::middleware('auth:sanctum')->prefix('v2/image')->group(function () {
-    Route::apiResource('/plants', ImagePlantController::class);
-    Route::post('/plants/update/{id}', [ImagePlantController::class, 'updateAll']);
-
-    Route::apiResource('/remedies', ImageRemedyController::class);
-    Route::post('/remedies/update/{id}', [ImageRemedyController::class, 'updateAll']);
-});
-
-Route::middleware('auth:sanctum')->prefix('v2/remedy')->group(function () {
-    Route::apiResource('/steps', StepController::class);
-    Route::apiResource('/ingredients', IngredientController::class);
-    Route::apiResource('/usages', UsageController::class);
-});
+Route::prefix('v1')->group(function () {
 
 
-Route::middleware('auth:sanctum')->prefix('v2/ailment')->group(function () {
-    Route::apiResource('/plants', AilmentPlantController::class);
-    Route::apiResource('/remedies', AilmentRemedyController::class);
-});
 
+    // Authentication
+    Route::post('users/register', [UserController::class, 'store']);
+    Route::post('users/login', [AuthenticationController::class, 'login']);
+    Route::post('users/session', [AuthenticationController::class, 'session']);
 
-Route::middleware('auth:sanctum')->prefix('v2')->group(function () {
-    Route::apiResource('/users', UserController::class);
-    Route::get('/users/role/{type}', [UserController::class, 'getUserRoleOnly']);
-});
-
-Route::middleware('auth:sanctum')->prefix('v2')->group(function () {
-    Route::apiResource('/requests', RequestPlantController::class);
-    Route::get('workplace/{id}', [RequestPlantController::class, 'userWorkplace']);
+    // Reset Password
+    Route::post('users/search_email', [AuthenticationController::class, 'searchEmail']);
+    Route::post('users/reset', [AuthenticationController::class, 'reset']);
 });
 
 
 
-Route::middleware('auth:sanctum')->prefix('v2')->group(function () {
-    Route::get('/storage/{path}',  [ImagePlantController::class, 'fetchImage']);
+Route::middleware('auth:sanctum')->prefix('v1')->group(function () {
+
+    // User API
+    Route::apiResource('users', UserController::class);
+    Route::post('users/{user}/avatar', [UserController::class, 'upload']);
+    Route::get('users/{role}/type', [UserController::class, 'type']);
+
+
+    // Request API
+    Route::apiResource('requests', RequestRequestsController::class);
+    Route::post('requests/image', [RequestImagesPathController::class, 'upload']);
+    Route::post('requests/{image}/image', [RequestImagesPathController::class, 'update']);
+
+
+    // Plant API
+    Route::apiResource('plants', PlantPlantsController::class);
+    Route::post('plants/{plant}/cover', [PlantPlantsController::class, 'uploadCover']);
+    Route::post('plants/image', [PlantImagesPathController::class, 'store']);
+    Route::post('plants/{image}/image', [PlantImagesPathController::class, 'update']);
+
+
+    // Remedy API
+    Route::apiResource('remedies', RemedyRemediesController::class);
+    Route::post('remedies/{remedy}/cover', [RemedyRemediesController::class, 'uploadCover']);
+    Route::post('remedies/image', [RemedyImagesPathController::class, 'store']);
+    Route::post('remedies/{image}/image', [RemedyImagesPathController::class, 'update']);
+
+
+
+
+
+
+
+    // Logout API
+    Route::post('users/logout', [AuthenticationController::class, 'logout']);
 });

@@ -13,13 +13,28 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('role')->default('User');
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            //required
+            $table->string('name')->nullable(false);
+            $table->string('email')->unique()->nullable(false);
+            $table->string('password')->nullable(false);
+            $table->string('type')->nullable(false)->default('User');
+
+            //changable
+            $table->string('status')->nullable(false)->default('Active');
+
+            //image
             $table->string('avatar')->nullable();
-            $table->string('status')->default('Active');
+
+            //user side
+            $table->string('total_plant_request')->nullable(false)->default(0);
+            $table->string('total_remedy_request')->nullable(false)->default(0);
+
+            //admin side
+            $table->string('total_update')->nullable(false)->default(0);
+            $table->string('total_delete')->nullable(false)->default(0);
+            $table->string('total_create')->nullable(false)->default(0);
+
+            $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
@@ -40,9 +55,7 @@ return new class extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
+
     public function down(): void
     {
         Schema::dropIfExists('users');

@@ -4,7 +4,6 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -20,13 +19,18 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+
         'name',
         'email',
-        'role',
         'password',
-        'avatar',
+        'type',
         'status',
-
+        'profile',
+        'total_plant_request',
+        'total_remedy_request',
+        'total_update',
+        'total_delete',
+        'total_create',
     ];
 
     /**
@@ -50,10 +54,5 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
-    }
-
-    public function plants(): HasMany
-    {
-        return $this->hasMany(Plant::class);
     }
 }
