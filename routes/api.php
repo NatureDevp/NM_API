@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthenticationController;
+use App\Http\Controllers\ImageController;
 use App\Http\Controllers\PlantImagesPathController;
 use App\Http\Controllers\PlantPlantsController;
 use App\Http\Controllers\RemedyImagesPathController;
@@ -61,8 +62,8 @@ Route::middleware('auth:sanctum')->prefix('v1')->group(function () {
     Route::post('remedies/{image}/image', [RemedyImagesPathController::class, 'update']);
 
 
-
-
+    // Image API
+    Route::get('images/{imageName}', [ImageController::class, 'path']);
 
 
 

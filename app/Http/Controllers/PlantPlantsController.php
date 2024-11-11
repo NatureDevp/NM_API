@@ -25,19 +25,6 @@ class PlantPlantsController extends Controller
     public function store(StorePlant_PlantsRequest $request)
     {
 
-        // 'name',
-        // 'scientific_name',
-        // 'local_name',
-        // 'description',
-        // 'status',    
-        // 'like',
-        // 'cover',
-        // 'update_id',
-        // 'create_id',
-        // 'request_id',
-
-
-
 
         $request->validated();
         // Create the plant
@@ -46,6 +33,7 @@ class PlantPlantsController extends Controller
             'local_name' => $request->local_name ?? null,
             'description' => $request->description,
             'scientific_name' => $request->scientific_name,
+            'treatment' => $request->treatment,
             'create_id' => $request->create_id,
             'request_id' => $request->request_id ?? null
         ]);

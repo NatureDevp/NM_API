@@ -19,6 +19,7 @@ class Plant_Plants extends Model
         'like',
         'status',
         'cover',
+        'treatment',
         'request_plant_id',
         'update_id',
         'create_id',
