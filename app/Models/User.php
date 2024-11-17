@@ -25,7 +25,7 @@ class User extends Authenticatable
         'password',
         'type',
         'status',
-        'profile',
+        'avatar',
         'total_plant_request',
         'total_remedy_request',
         'total_update',

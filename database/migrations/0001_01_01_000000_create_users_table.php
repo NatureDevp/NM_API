@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('type')->nullable(false)->default('User');
 
             //changable
-            $table->string('status')->nullable(false)->default('Active');
+            $table->string('status')->nullable(false)->default('Inactive');
 
             //image
             $table->string('avatar')->nullable();

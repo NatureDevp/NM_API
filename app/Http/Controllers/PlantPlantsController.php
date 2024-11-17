@@ -13,7 +13,7 @@ class PlantPlantsController extends Controller
 {
     public function index()
     {
-        $data = Plant_Plants::with(['create_by', 'update_by', 'requests_info'])->get();
+        $data = Plant_Plants::with(['local_names', 'treatments', 'images', 'create_by', 'update_by', 'requests_info'])->get();
 
         if ($data->isEmpty()) {
             return response()->json(['success' => false, 'message' => 'No plants found.'], 200);
@@ -25,15 +25,12 @@ class PlantPlantsController extends Controller
     public function store(StorePlant_PlantsRequest $request)
     {
 
-
         $request->validated();
         // Create the plant
         $data = Plant_Plants::create([
             'name' => $request->name,
-            'local_name' => $request->local_name ?? null,
             'description' => $request->description,
             'scientific_name' => $request->scientific_name,
-            'treatment' => $request->treatment,
             'create_id' => $request->create_id,
             'request_id' => $request->request_id ?? null
         ]);
@@ -46,7 +43,7 @@ class PlantPlantsController extends Controller
     //=============================================================================
     public function show(Plant_Plants $plant)
     {
-        $data = $plant->load('create_by', 'update_by', 'requests_info');
+        $data = $plant->load('local_names', 'treatments', 'images', 'create_by', 'update_by', 'requests_info');
         return response()->json(['success' => true, 'message' => 'Plant found.', 'data' => $data], 200);
     }
 
@@ -82,7 +79,8 @@ class PlantPlantsController extends Controller
     {
 
         $request->validate([
-            'cover' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'name' => 'required|string|min:3|max:255',
+            'cover' => 'required|image|mimes:jpeg,png,jpg|max:5048',
         ]);
 
         $named = $plant->cover;
@@ -97,8 +95,10 @@ class PlantPlantsController extends Controller
 
         if ($request->hasFile('cover')) {
             //change name of image
+            $pname = str_replace(' ', '_', $request->name ?? 'Unknown');
             $file = $request->file('cover');
-            $named = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+
+            $named = $pname . '_' . time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
             $file->storeAs('plant_cover', $named, 'public');
         }
 

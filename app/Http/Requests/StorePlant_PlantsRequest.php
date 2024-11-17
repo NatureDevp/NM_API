@@ -24,11 +24,9 @@ class StorePlant_PlantsRequest extends FormRequest
         return [
             'name' => 'required|string|min:3|max:355',
             'scientific_name' => 'required|string|min:3|max:355',
-            'local_name' => 'string|min:3|max:355',
             'description' => 'string|min:3',
             'status' => 'string|in:Active,Inactive,Pending',
             'like' => 'integer|min:0',
-            'treatment' => 'required|string|min:3|max:855',
             'cover' => 'image|mimes:jpeg,png,jpg|max:4048',
             'create_id' => 'string|exists:users,id',
             'request_id' => 'string|exists:request__requests,id',

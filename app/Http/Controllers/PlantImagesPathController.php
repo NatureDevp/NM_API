@@ -20,8 +20,9 @@ class PlantImagesPathController extends Controller
 
         if ($request->hasFile('image')) {
             //change name of image
+            $pname = str_replace(' ', '_', $request->name ?? 'Unknown');
             $file = $request->file('image');
-            $named = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+            $named = $pname . '_' . time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
             $file->storeAs('plant_image', $named, 'public');
         }
 
@@ -62,8 +63,9 @@ class PlantImagesPathController extends Controller
 
         // If a new image is provided, save it
         if ($request->hasFile('image')) {
+            $pname = str_replace(' ', '_', $request->name ?? 'Unknown');
             $file = $request->file('image');
-            $newImageName = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+            $newImageName = $pname . '_' . time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
             $file->storeAs('plant_image', $newImageName, 'public');
         }
 
@@ -71,5 +73,34 @@ class PlantImagesPathController extends Controller
         $image->save();
 
         return response()->json(['success' => true, 'message' => 'Plant image updated successfully.'], 200);
+    }
+
+
+    // =============================================================================
+    public function clearAll($plantID)
+    {
+        try {
+            // Retrieve all images related to the plant ID
+            $plant_images = Plant_Images_Path::where('plant_id', $plantID)->get();
+
+            if ($plant_images->isEmpty()) {
+                return response()->json(['success' => false, 'message' => 'No images found for the specified plant ID.'], 404);
+            }
+
+            // Delete images and their associated files
+            $plant_images->each(function ($image) {
+                // Delete the database record
+                $image->delete();
+
+                // Delete the file from storage
+                if (Storage::disk('public')->exists('plant_image/' . $image->path)) {
+                    Storage::disk('public')->delete('plant_image/' . $image->path);
+                }
+            });
+
+            return response()->json(['success' => true, 'message' => 'Plant images and files cleared successfully.'], 200);
+        } catch (\Exception $e) {
+            return response()->json(['success' => false, 'message' => 'Failed to clear plant images: ' . $e->getMessage()], 500);
+        }
     }
 }

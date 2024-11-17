@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdatePlant_PlantsRequest extends FormRequest
+class UpdatePlant_TreatmentRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,12 +22,9 @@ class UpdatePlant_PlantsRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'string|min:3|max:355',
-            'scientific_name' => 'string|min:3|max:355',
-            'description' => 'string|min:3',
-            'cover' => 'image|mimes:jpeg,png,jpg|max:4048',
-            'create_id' => 'string|exists:users,id',
-            'request_id' => 'string|exists:request__requests,id',
+            'name' => 'string|max:255',
+            'description' => 'string',
+            'plant_id' => 'exists:plant__plants,id',
         ];
     }
 }

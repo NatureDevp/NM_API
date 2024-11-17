@@ -29,10 +29,8 @@ return new class extends Migration
         Schema::create('plant__plants', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->text('local_name')->nullable();
             $table->string('scientific_name')->unique();
             $table->text('description');
-            $table->text('treatment');
             $table->unsignedInteger('like')->default(0);
             $table->string('status')->default('Inactive');
             $table->string('cover')->nullable();

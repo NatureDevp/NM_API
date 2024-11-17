@@ -22,8 +22,9 @@ class UpdatePlant_Images_PathRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'name' => 'required|string|min:3|max:255',
             'plant_id' => 'exists:plant__plants,id',
-            'image' => 'required|image|mimes:jpeg,png,jpg|max:4048',
+            'image' => 'required|image|mimes:jpeg,png,jpg',
         ];
     }
 }

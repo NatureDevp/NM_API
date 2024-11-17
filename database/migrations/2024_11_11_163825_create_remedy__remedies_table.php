@@ -27,9 +27,8 @@ return new class extends Migration
         Schema::create('remedy__remedies', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->text('local_name')->nullable();
             $table->text('description');
-            $table->text('treatment');
+            $table->text('treatment')->nullable();
             $table->string('status')->default('Pending');
             $table->text('usage')->nullable();
             $table->text('side_effect')->nullable();

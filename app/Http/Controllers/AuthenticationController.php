@@ -12,6 +12,17 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthenticationController extends Controller
 {
+
+    public function store(StoreAuthenticationRequest $request)
+    {
+        $request->validated();
+        $user = User::create($request->all());
+
+        if ($user) {
+            return response()->json(['success' => true, 'message' => 'User created successfully.', 'data' => $user], 201);
+        }
+    }
+
     public function login(Request $request)
     {
         $validation = [
@@ -30,11 +41,13 @@ class AuthenticationController extends Controller
         $user = User::where('email', $request->email)->first();
 
         if (!$user || !Hash::check($request->password, $user->password)) {
-            return response()->json(['success' => false, 'message' => 'Invalid. Incorrect password.', 'errors' => ['password' => ['Invalid. Incorrect Password.']]], 401);
+            return response()->json(['success' => false, 'message' => 'Invalid. Incorrect password.', 'errors' => ['password' => ['Invalid. Incorrect Password.']]], 422);
         }
 
         $token = $user->createToken('auth_token' . $user->name)->plainTextToken;
-        return response()->json(['success' => true, 'message' => 'Logged in successfully.', 'access_token' => $token, 'data' => [$user]], 200);
+
+        $user->update(['status' => 'Active']);
+        return response()->json(['success' => true, 'message' => 'Logged in successfully.', 'access_token' => $token, 'data' => $user], 200);
     }
 
     //=========================================================================
@@ -49,16 +62,13 @@ class AuthenticationController extends Controller
 
     public function session(Request $request)
     {
-        if (!$request->header('Authorization')) {
-            return response()->json(['is_active' => false, 'message' => 'Session Expired.'], 401);
+        if ($request->header('Authorization') == null) {
+            return response()->json(['is_active' => false, 'message' => 'Session not accepted.'], 200);
         }
 
-        $user = Auth::guard('sanctum')->user();
-
-        if (!$user) {
-            return response()->json(['is_active' => false, 'message' => 'Session Expired.'], 401);
+        if (!Auth::guard('sanctum')->check()) {
+            return response()->json(['is_active' => false, 'message' => 'Session not accepted.'], 200);
         }
-
         return response()->json(['is_active' => true, 'message' => 'Session accepted.'], 200);
     }
 
