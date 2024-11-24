@@ -5,11 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Remedy_Images_Path extends Model
+class Remedy_Usage extends Model
 {
     protected $fillable = [
+        'name',
+        'description',
         'remedy_id',
-        'path',
     ];
 
     public function remedy(): BelongsTo

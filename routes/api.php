@@ -7,7 +7,11 @@ use App\Http\Controllers\PlantLocalNameController;
 use App\Http\Controllers\PlantPlantsController;
 use App\Http\Controllers\PlantTreatmentController;
 use App\Http\Controllers\RemedyImagesPathController;
+use App\Http\Controllers\RemedyIngredientController;
 use App\Http\Controllers\RemedyRemediesController;
+use App\Http\Controllers\RemedyStepController;
+use App\Http\Controllers\RemedyTreatmentController;
+use App\Http\Controllers\RemedyUsageController;
 use App\Http\Controllers\RequestImagesPathController;
 use App\Http\Controllers\RequestRequestsController;
 use App\Http\Controllers\UserController;
@@ -51,19 +55,37 @@ Route::middleware('auth:sanctum')->prefix('v1')->group(function () {
     Route::delete('plants/treatment/{plantID}/clear', [PlantTreatmentController::class, 'clearAll']);
 
     Route::apiResource('plants/local_name', PlantLocalNameController::class);
-    Route::delete('plants/local_name/{plant}/clear', [PlantLocalNameController::class, 'clearAll']);
+    Route::delete('plants/local_name/{plantID}/clear', [PlantLocalNameController::class, 'clearAll']);
 
 
     Route::post('plants/{plant}/cover', [PlantPlantsController::class, 'uploadCover']);
     Route::post('plants/image', [PlantImagesPathController::class, 'store']);
     Route::post('plants/{image}/image', [PlantImagesPathController::class, 'update']);
-    Route::delete('plants/image/{plant}/clear', [PlantImagesPathController::class, 'clearAll']);
+    Route::delete('plants/image/{plantID}/clear', [PlantImagesPathController::class, 'clearAll']);
+
+
 
     // Remedy API
     Route::apiResource('remedies', RemedyRemediesController::class);
     Route::post('remedies/{remedy}/cover', [RemedyRemediesController::class, 'uploadCover']);
+
     Route::post('remedies/image', [RemedyImagesPathController::class, 'store']);
     Route::post('remedies/{image}/image', [RemedyImagesPathController::class, 'update']);
+    Route::delete('remedies/image/{remedyID}/clear', [RemedyImagesPathController::class, 'clearAll']);
+
+    Route::apiResource('remedies/step', RemedyStepController::class);
+    Route::delete('remedies/step/{remedyID}/clear', [RemedyStepController::class, 'clearAll']);
+
+    Route::apiResource('remedies/treatment', RemedyTreatmentController::class);
+    Route::delete('remedies/treatment/{remedyID}/clear', [RemedyTreatmentController::class, 'clearAll']);
+
+    Route::apiResource('remedies/ingredient', RemedyIngredientController::class);
+    Route::delete('remedies/ingredient/{remedyID}/clear', [RemedyIngredientController::class, 'clearAll']);
+
+
+    Route::apiResource('remedies/usage', RemedyUsageController::class);
+    Route::delete('remedies/usage/{remedyID}/clear', [RemedyUsageController::class, 'clearAll']);
+
 
 
     // Image API

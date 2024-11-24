@@ -24,7 +24,7 @@ class StorePlant_TreatmentRequest extends FormRequest
         return [
             'plant_id' => 'required|integer|exists:plant__plants,id',
             'name' => 'required|string|min:3|max:255',
-            'description' => 'string|min:3|max:255',
+            'description' => 'string|min:3|max:800',
         ];
     }
 }

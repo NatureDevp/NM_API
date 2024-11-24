@@ -11,7 +11,7 @@ class UpdateRemedy_Images_PathRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,9 @@ class UpdateRemedy_Images_PathRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'string|min:3|max:255',
+            'remedy_id' => 'exists:remedy__remedies,id',
+            'image' => 'image|mimes:jpeg,png,jpg|max:5048',
         ];
     }
 }

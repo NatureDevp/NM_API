@@ -14,7 +14,7 @@ class RemedyRemediesController extends Controller
     //============================================================================================
     public function index()
     {
-        $data = Remedy_Remedies::all();
+        $data = Remedy_Remedies::with('treatments', 'usages', 'steps',  'ingredients', 'images', 'create_by', 'update_by')->get();
 
         if ($data->isEmpty()) {
             return response()->json(['success' => false, 'message' => 'No remedies found.'], 200);
@@ -41,7 +41,7 @@ class RemedyRemediesController extends Controller
     //============================================================================================
     public function show(Remedy_Remedies $remedy)
     {
-        $data = $remedy->load('remedy', 'remedy.remedy_type', 'remedy.remedy_type.remedy_type');
+        $data = $remedy->load('treatments', 'usages', 'ingredients', 'steps', 'images', 'plant', 'create_by', 'update_by');
         return response()->json(['success' => true, 'message' => 'Remedy found.', 'data' => $data], 200);
     }
 
@@ -74,6 +74,11 @@ class RemedyRemediesController extends Controller
     public function uploadCover(Request $request, Remedy_Remedies $remedy)
     {
 
+        $request->validate([
+            'name' => 'required|string|min:3|max:255',
+            'cover' => 'required|image|mimes:jpeg,png,jpg|max:5048',
+        ]);
+
         $named = $remedy->cover;
 
         //delete old image
@@ -86,8 +91,10 @@ class RemedyRemediesController extends Controller
 
         if ($request->hasFile('cover')) {
             //change name of image
+            $pname = str_replace(' ', '_', $request->name ?? 'Unknown');
             $file = $request->file('cover');
-            $named = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+
+            $named = $pname . '_' . time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
             $file->storeAs('remedy_cover', $named, 'public');
         }
 

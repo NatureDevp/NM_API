@@ -25,7 +25,6 @@ class RemedyRemediesSeeder extends Seeder
             //Kugon
             [
                 'name' => 'Herbal Decoction',
-                'treatment' => 'Diarrhea',
                 'description' => 'A decoction made from Kugon roots helps alleviate diarrhea by soothing the digestive system and reducing inflammation',
                 'status' => 'Active',
                 // 'ingredient' => ['5 chopped fresh roots', '2 glasses of water'],
@@ -47,7 +46,6 @@ class RemedyRemediesSeeder extends Seeder
             //Kamias
             [
                 'name' => 'Poultice',
-                'treatment' => 'Swollen glands due to mumps',
                 'description' => 'A poultice made from chopped and mashed Kamias fruits helps to reduce swelling and relieve pain in the salivary glands.',
                 'status' => 'Active',
                 // 'ingredient' => ['Kamias fruits'],
@@ -64,7 +62,6 @@ class RemedyRemediesSeeder extends Seeder
             //Balimbing
             [
                 'name' => 'Juice Extract',
-                'treatment' => 'Itchiness from chicken pox',
                 'description' => 'Juice extracted from Balimbing leaves helps to relieve itchiness and soothe the skin affected by chicken pox.',
                 'status' => 'Active',
                 // 'ingredient' => ['Young Balimbing leaves'],
@@ -81,7 +78,6 @@ class RemedyRemediesSeeder extends Seeder
             //Kalatsutsi
             [
                 'name' => 'Oil Infusion',
-                'treatment' => 'Scabies',
                 'description' => 'An oil infusion made from Kalatsutsi leaves helps to treat scabies by reducing itching and killing the mites responsible for the infection.',
                 'status' => 'Active',
                 // 'ingredient' => [
@@ -101,7 +97,6 @@ class RemedyRemediesSeeder extends Seeder
             //Kakawate
             [
                 'name' => 'Juice Extract',
-                'treatment' => 'Scabies',
                 'description' => 'The juice extracted from Kakawate leaves helps to treat scabies by reducing itching and killing the mites responsible for the infection.',
                 'status' => 'Active',
                 // 'ingredient' => ['Kakawate leaves'],
@@ -114,7 +109,6 @@ class RemedyRemediesSeeder extends Seeder
             //Comfrey
             [
                 'name' => 'Juice Extract',
-                'treatment' => 'Skin eruptions and dermatitis',
                 'description' => 'The juice extracted from Comfrey leaves helps to relieve inflammation and promote healing of the affected skin.',
                 'status' => 'Active',
                 // 'ingredient' => ['Comfrey leaves'],
@@ -131,7 +125,6 @@ class RemedyRemediesSeeder extends Seeder
             //Alugbati
             [
                 'name' => 'Poultice',
-                'treatment' => 'Abscesses',
                 'description' => 'A poultice made from Alugbati leaves helps to draw out infection and reduce inflammation. Applying this herbal remedy to the affected area can provide relief from pain and swelling.',
                 'status' => 'Active',
                 // 'ingredient' => ['2 Alugbati leaves'],
@@ -148,7 +141,6 @@ class RemedyRemediesSeeder extends Seeder
             //Amarillo
             [
                 'name' => 'Poultice',
-                'treatment' => 'Abscesses and Boils',
                 'description' => 'A poultice made from Amarillo leaves and flowers helps to soothe and heal abscesses and boils. The natural antiseptic properties of this plant aid in preventing infection and speeding up recovery.',
                 'status' => 'Active',
                 // 'ingredient' => ['3 Amarillo leaves ', '3 Amarillo leaves '],
@@ -165,7 +157,7 @@ class RemedyRemediesSeeder extends Seeder
             //Rosemary
             [
                 'name' => 'Juice Application',
-                'treatment' => 'Pimples or Acne',
+
                 'description' => 'Applying rosemary juice helps to reduce pimples and acne. Rosemary has antimicrobial properties that help to clear the skin and prevent further breakouts.',
                 'status' => 'Active',
                 // 'ingredient' => ['5 rosemary leaves'],
@@ -182,7 +174,6 @@ class RemedyRemediesSeeder extends Seeder
             //oregano
             [
                 'name' => 'Herbal Decoction',
-                'treatment' => 'Cough',
                 'description' => 'A herbal decoction made from oregano leaves helps to soothe the throat and alleviate cough. The essential oils in oregano leaves act as a natural expectorant, helping to clear mucus from the airways.',
                 'status' => 'Active',
                 // 'ingredient' => [
@@ -208,7 +199,6 @@ class RemedyRemediesSeeder extends Seeder
             //Kulitis
             [
                 'name' => 'Herbal Decoction ',
-                'treatment' => 'Asthma',
                 'description' => 'A decoction made from Kulitis leaves and flowers helps reduce asthma symptoms by decreasing mucus production and inflammation in the airways.',
                 'status' => 'Active',
                 // 'ingredient' => [
@@ -233,7 +223,6 @@ class RemedyRemediesSeeder extends Seeder
             //Makabuhay
             [
                 'name' => 'Hot Foot Bath',
-                'treatment' => 'Athlete\'s foot ',
                 'description' => 'A hot foot bath made from Makabuhay vine helps relieve the symptoms of athlete\'s foot by reducing itching and killing the fungi responsible for the infection. ',
                 'status' => 'Active',
                 // 'ingredient' => [
@@ -257,7 +246,6 @@ class RemedyRemediesSeeder extends Seeder
             //Aloe vera
             [
                 'name' => 'Aloe Vera Juice Extract',
-                'treatment' => 'Burns',
                 'description' => 'Aloe vera juice is known for its soothing and healing properties. Applying the juice to burns can help reduce pain and promote faster healing.',
                 'status' => 'Active',
                 // 'ingredient' => ['Sabila leaves'],
@@ -277,7 +265,6 @@ class RemedyRemediesSeeder extends Seeder
             //Aloe Vera
             [
                 'name' => 'Sabila Leaves Poultice (Aloe Vera Poultice)',
-                'treatment' => 'Sprained Ankle or Wrist',
                 'description' => 'Aloe vera poultice is a natural remedy for sprained ankles or wrists. Aloe vera helps reduce swelling and promotes faster healing.',
                 'status' => 'Active',
                 // 'ingredient' => ['2-3 fresh Aloe Vera leaves'],
@@ -296,7 +283,6 @@ class RemedyRemediesSeeder extends Seeder
             //Aloe Vera
             [
                 'name' => 'Aloe Vera Hair Mask',
-                'treatment' => 'Hair Care',
                 'description' => 'Aloe vera hair mask is known for its moisturizing properties, promoting hair growth, soothing irritation, and improving overall hair health.',
                 'status' => 'Active',
                 // 'ingredient' => ['3-4 tbsp Aloe Vera gel', '6-8 tbsp Coconut oil'],
@@ -318,7 +304,6 @@ class RemedyRemediesSeeder extends Seeder
             //Aloe Vera
             [
                 'name' => 'Aloe Vera Oil for Hair Growth',
-                'treatment' => 'Hair Growth',
                 'description' => 'Aloe Vera oil is used to promote hair growth, reduce dandruff, and improve scalp health, leading to thicker, shinier hair.',
                 'status' => 'Active',
                 // 'ingredient' => ['1 cup Aloe Vera', '1 cup Coconut Oil'],
@@ -341,7 +326,6 @@ class RemedyRemediesSeeder extends Seeder
             //Bayabas
             [
                 'name' => 'Herbal Decoction for Diarrhea',
-                'treatment' => 'Diarrhea',
                 'description' => 'A decoction made from Bayabas leaves helps alleviate diarrhea by soothing the digestive system and reducing inflammation.',
                 'status' => 'Active',
                 // 'ingredient' => ['10 chopped Bayabas leaves', '2 glasses of water'],
@@ -362,7 +346,6 @@ class RemedyRemediesSeeder extends Seeder
             //Bayabas
             [
                 'name' => 'Herbal Decoction Bath for Ringworm',
-                'treatment' => 'Ringworm',
                 'description' => 'A daily bath with a decoction made from Guava leaves helps treat ringworm by reducing fungal infections and soothing the skin.',
                 'status' => 'Active',
                 // 'ingredient' => ['10 cups chopped fresh Bayabas leaves', '1 gallon of water'],
@@ -381,8 +364,6 @@ class RemedyRemediesSeeder extends Seeder
             //Bayabas
             [
                 'name' => 'Guava Herbal Inhalation for Respiratory Relief',
-
-                'treatment' => 'Respiratory Relief',
                 'description' => 'Guava Herbal Inhalation utilizes the aromatic properties of fresh Bayabas leaves to provide soothing relief for respiratory discomfort.',
                 'status' => 'Active',
                 // 'ingredient' => ['Fresh Bayabas leaves'],
@@ -403,7 +384,6 @@ class RemedyRemediesSeeder extends Seeder
             //Takip-kohol
             [
                 'name' => 'Takip-kohol Poultice',
-                'treatment' => 'Eczema',
                 'description' => 'Takip-kohol poultice is a natural remedy used to treat eczema. Takip-kohol is known for its anti-inflammatory and wound-healing properties, making it an effective treatment for skin conditions like eczema. The poultice, when applied to the skin, reduces itching, calms redness, and promotes faster healing of eczema-affected areas.',
                 'status' => 'Active',
                 // 'ingredient' => ['10 leaves of Takip-kohol (Centella asiatica)'],
@@ -425,7 +405,6 @@ class RemedyRemediesSeeder extends Seeder
             //Atis
             [
                 'name' => 'Seed Oil Mixture',
-                'treatment' => 'Lice infestation on the head',
                 'description' => 'A mixture of crushed Atis seeds and oil is applied to the scalp and hair to eliminate lice. The treatment is left on overnight and washed off the next morning.',
                 'status' => 'Active',
                 // 'ingredient' => ['1/2 cup of Atis seeds', '1 cup of oil'],
@@ -446,7 +425,6 @@ class RemedyRemediesSeeder extends Seeder
             //Atis
             [
                 'name' => 'Atis Juice Extract',
-                'treatment' => 'Infected mosquito bites',
                 'description' => 'The juice extracted from unripe Atis fruit helps to reduce inflammation and promote healing of infected mosquito bites. The fruit contains compounds that soothe the skin and reduce itching.',
                 'status' => 'Active',
                 // 'ingredient' => ['1 unripe Atis fruit'],
@@ -465,7 +443,6 @@ class RemedyRemediesSeeder extends Seeder
             //Atis
             [
                 'name' => 'Custard Apple Herbal Inhalation',
-                'treatment' => 'Respiratory Relief',
                 'description' => 'The Custard apple (Atis) herbal inhalation remedy helps treat fainting spells and dizziness. By using fresh leaves from the Custard apple plant (Annona squamosa), this remedy uses the pleasant smell of the crushed leaves to revive the patient.',
                 'status' => 'Active',
                 // 'ingredient' => ['2 to 3 fresh Custard apple leaves (Annona squamosa)'],
@@ -487,7 +464,6 @@ class RemedyRemediesSeeder extends Seeder
             //Balanoy
             [
                 'name' => 'Juice Extract',
-                'treatment' => "Athlete's foot",
                 'description' => "Juice extracted from Balanoy leaves helps to treat athlete's foot by reducing the fungal infection and soothing the affected skin",
                 'status' => 'Active',
                 // 'ingredient' => ['15-20 Balanoy fresh leaves ', 'Water(Enough to make a paste)'],
@@ -513,7 +489,6 @@ class RemedyRemediesSeeder extends Seeder
             //Young saging
             [
                 'name' => 'Poultice',
-                'treatment' => "Mild bleeding from bee and wasp stings ",
                 'description' => "A poultice made from young saging leaves can help to stop bleeding and promote healing. The juice from these leaves acts as a natural antiseptic to prevent infection.",
                 'status' => 'Active',
                 // 'ingredient' => ['Young saging leaves'],
@@ -538,7 +513,6 @@ class RemedyRemediesSeeder extends Seeder
 
             [
                 'name' => 'Digestive or Cleansing Aid',
-                'treatment' => "Worm infestation(For Ascaris or Trichina)",
                 'description' => "Akapulko seeds are traditionally used for their medicinal properties. When dried and pulverized, they can be mixed with milk or water to create a remedy for digestive relief or cleansing purposes. This remedy is commonly used in both adults and children.",
                 'status' => 'Active',
                 // 'ingredient' => ['1 cup of dried Akapulko seeds', '1 cup of milk or water'],
@@ -564,7 +538,6 @@ class RemedyRemediesSeeder extends Seeder
             //Akapulko
             [
                 'name' => 'Ointment',
-                'treatment' => "Skin fungal infections, ringworm",
                 'description' => "An ointment made from Akapulko leaves is effective in treating fungal infections like ringworm. The leaves are pounded and applied directly to the affected area.",
                 'status' => 'Active',
                 // 'ingredient' => ['Fresh, matured Akapulko leaves',],
@@ -593,7 +566,7 @@ class RemedyRemediesSeeder extends Seeder
             //Akapulko
             [
                 'name' => 'Decoction/ Boil',
-                'treatment' => "Skin infections, eczema",
+
                 'description' => "A decoction made from Akapulko leaves can be used to wash the affected area to treat skin infections and eczema.",
                 'status' => 'Active',
                 // 'ingredient' => ['1 cup of chopped Akapulko leaves', '2 cups of water'],
@@ -619,7 +592,7 @@ class RemedyRemediesSeeder extends Seeder
 
             [
                 'name' => 'Poultice ',
-                'treatment' => "Athlete's foot ",
+
                 'description' => "A poultice made from Kamantigul flowers can help reduce itching and inflammation associated with athlete's foot, promoting faster healing. ",
                 'status' => 'Active',
                 // 'ingredient' => ['Kamantigul flowers ',],
@@ -646,7 +619,7 @@ class RemedyRemediesSeeder extends Seeder
             //Kamantigi
             [
                 'name' => 'Compress or Poultice ',
-                'treatment' => "Ringworm ",
+
                 'description' => "A compress or poultice made from crushed Kamantigul flowers helps to reduce fungal infections and soothe the skin affected by ringworm.",
                 'status' => 'Active',
                 // 'ingredient' => ['5-10 Kamantigul flowers (amount depends on the size of the infection)',],
@@ -669,7 +642,7 @@ class RemedyRemediesSeeder extends Seeder
             //Lagundi
             [
                 'name' => 'Lagundi Tea',
-                'treatment' => "Cough, Asthma",
+
                 'description' => "An herbal tea made from Lagundi leaves helps relieve cough and asthma symptoms",
                 'status' => 'Active',
                 // 'ingredient' => ['6 tablespoons of fresh Lagundi leaves (or 2 tablespoons dried)', '2 cups of water', '(Optional) Honey or lemon for flavor'],
@@ -700,7 +673,7 @@ class RemedyRemediesSeeder extends Seeder
             //Lagundi
             [
                 'name' => 'Lagundi Herbal Decoction ',
-                'treatment' => "Fever from chicken pox ",
+
                 'description' => "An herbal decoction made from Lagundi leaves helps to reduce fever and provide relief from the symptoms of chicken pox. ",
                 'status' => 'Active',
                 // 'ingredient' => ['4 tablespoons of chopped dried Lagundi leaves or 6 tablespoons of chopped fresh Lagundi leaves', '2 glasses of water'],
@@ -725,7 +698,7 @@ class RemedyRemediesSeeder extends Seeder
             //Lagundi
             [
                 'name' => 'Lagundi Tea',
-                'treatment' => "Fever",
+
                 'description' => "Lagundi Tea is an herbal remedy made from Lagundi leaves, known for its anti-inflammatory and antipyretic properties, making it effective in reducing fever and alleviating respiratory issues.",
                 'status' => 'Active',
                 // 'ingredient' => ['4 tablespoons of chopped dried lagundi leaves or 6 tablespoons of fresh chopped lagundo leaves', '2 cups of purified water'],
@@ -751,7 +724,7 @@ class RemedyRemediesSeeder extends Seeder
             //Kataka-taka
             [
                 'name' => 'Juice Extract',
-                'treatment' => 'Infected mosquito bites ',
+
                 'description' => "The juice extracted from Kataka-taka leaves helps to reduce inflammation and promote healing of infected mosquito bites. The plant's natural compounds soothe the skin and reduce itching.",
                 'status' => 'Active',
                 // 'ingredient' => ['5-10 Kataka-taka leaves'],
@@ -780,7 +753,7 @@ class RemedyRemediesSeeder extends Seeder
             //Pistula
             [
                 'name' => 'Juice Extract',
-                'treatment' => "Athlete's foot",
+
                 'description' => "Juice extracted from young Kanya Pistula leaves helps to treat athlete's foot by reducing the fungal infection and soothing the skin.",
                 'status' => 'Active',
                 // 'ingredient' => ['5-10 Young Kanya Pistula leaves '],
@@ -805,7 +778,7 @@ class RemedyRemediesSeeder extends Seeder
             //Bawang
             [
                 'name' => 'Direct Application',
-                'treatment' => 'Ringworm',
+
                 'description' => "Applying crushed Bawang cloves directly to the affected area helps to reduce fungal infections and promote healing of the skin.",
                 'status' => 'Active',
                 // 'ingredient' => ['1 clove of Bawang(Garlic)'],
@@ -826,7 +799,6 @@ class RemedyRemediesSeeder extends Seeder
             //Bawang
             [
                 'name' => 'Garlic Filling',
-                'treatment' => 'Toothache',
                 'description' => "Garlic, known for its antibacterial and analgesic properties, can be used as a natural filling to relieve toothache. This remedy helps reduce pain and fight infection in the affected tooth by directly applying a small garlic piece to the cavity.",
                 'status' => 'Active',
                 // 'ingredient' => ['Fresh Bawang (Garlic) clove'],
@@ -848,7 +820,7 @@ class RemedyRemediesSeeder extends Seeder
             //Bawang
             [
                 'name' => 'Garlic Lozenges',
-                'treatment' => 'Sore Throat, Toothache Relief',
+
                 'description' => "Garlic is known for its potent antibacterial and anti-inflammatory properties. Chewing garlic slowly helps release its beneficial compounds, which can soothe sore throats and provide temporary relief for toothache.",
                 'status' => 'Active',
                 // 'ingredient' => ['1 clove of fresh garlic'],
@@ -871,7 +843,7 @@ class RemedyRemediesSeeder extends Seeder
             //Mayana
             [
                 'name' => 'Poultice',
-                'treatment' => 'Mild bleeding from bee and wasp stings',
+
                 'description' => "A poultice made from Mayana leaves helps to stop bleeding and promote healing. The juice from the leaves acts as a natural antiseptic.",
                 'status' => 'Active',
                 // 'ingredient' => ['Young Mayana leaves'],
@@ -893,7 +865,7 @@ class RemedyRemediesSeeder extends Seeder
             //Niyog-Niyogan
             [
                 'name' => 'Digestive or Cleansing Aid',
-                'treatment' => 'Worm infestation (For Pin Worms)',
+
                 'description' => "Niyog-Niyogan seeds are a traditional remedy used to expel pinworms. The seeds are eaten raw, typically 2 hours after supper, to help eliminate the parasites from the body. This remedy is often repeated after one week if needed to ensure the worms are fully expelled.",
                 'status' => 'Active',
                 // 'ingredient' => ['Niyog-Niyogan seeds'],
@@ -922,7 +894,7 @@ class RemedyRemediesSeeder extends Seeder
             //Niyog-Niyogan
             [
                 'name' => 'Niyog-Niyogan Intestinal Worms Remediation',
-                'treatment' => 'Intestinal worms',
+
                 'description' => "The dried seeds of Niyog-niyogan are ingested to eliminate intestinal worms.",
                 'status' => 'Active',
                 // 'ingredient' => ['Dried Niyog-niyogan seeds', '1/2 or 1 glass of water.'],
@@ -942,7 +914,7 @@ class RemedyRemediesSeeder extends Seeder
             //Tsaang Gubat
             [
                 'name' => 'Tea',
-                'treatment' => 'Stomach pains',
+
                 'description' => "An herbal tea made from Tsaang Gubat leaves helps relieve stomach pains.",
                 'status' => 'Active',
                 // 'ingredient' => ['Fresh Tsaang Gubat leaves', '1 glass of water'],
@@ -969,7 +941,7 @@ class RemedyRemediesSeeder extends Seeder
             //Paragis
             [
                 'name' => 'Paragis Smoothies',
-                'treatment' => 'Kidney problems,hypertension,influenza relief,overall health booster',
+
                 'description' => "This Paragis smoothie recipe is a delicious way to incorporate the health benefits of Paragis into your daily routine. It helps support kidney function, regulates blood pressure, and boosts the immune system.",
                 'status' => 'Active',
                 // 'ingredient' => ['3 bananas', '1 spoon of Paragis Powder', 'Ice cubes', '1 cup purified water'],
@@ -992,7 +964,7 @@ class RemedyRemediesSeeder extends Seeder
             //Paragis
             [
                 'name' => 'Paragis Tea',
-                'treatment' => 'Kidney problems, hypertension, flu symptoms, and general health booster',
+
                 'description' => "Paragis tea is an herbal remedy known for its ability to support kidney function, regulate blood pressure, and relieve flu symptoms. It's a simple, natural way to incorporate Paragis into your daily routine for health benefits.",
                 'status' => 'Active',
                 // 'ingredient' => ['3 cups of purified water', 'A bunch of Paragis leaves', '1 cup purified water (for serving adjustments)', 'Honey (optional)', 'Ice cubes (optional, for cold tea)'],
@@ -1016,7 +988,7 @@ class RemedyRemediesSeeder extends Seeder
             //Ampalaya
             [
                 'name' => 'Ampalaya Hemorrhoids Treatment',
-                'treatment' => 'Hemorrhoids',
+
                 'description' => "Ampalaya is known for its anti-inflammatory and analgesic properties, making it a useful herbal remedy for alleviating the discomfort associated with hemorrhoids. The combination of its roots, fruits, and seeds can help reduce swelling and soothe irritation.",
                 'status' => 'Active',
                 // 'ingredient' => [
@@ -1041,7 +1013,7 @@ class RemedyRemediesSeeder extends Seeder
             //Ampalaya
             [
                 'name' => 'Ampalaya Tea',
-                'treatment' => 'Diabetes',
+
                 'description' => "Ampalaya juice is known to help lower blood sugar levels. The fruit is juiced and consumed daily.",
                 'status' => 'Active',
                 // 'ingredient' => [
@@ -1065,7 +1037,7 @@ class RemedyRemediesSeeder extends Seeder
             //pansit-pansitan
             [
                 'name' => 'Ulsimang Bato Tea',
-                'treatment' => 'Arthritis',
+
                 'description' => "This Ulsimang Bato (Peperomia pellucida) tea is a natural remedy traditionally used in the Philippines to help alleviate arthritis and inflammation. The plant, known locally as 'pansit-pansitan' or 'ulasimang-bato,' is valued for its analgesic and anti-hyperuricemic properties.",
                 'status' => 'Active',
                 // 'ingredient' => [
@@ -1094,7 +1066,7 @@ class RemedyRemediesSeeder extends Seeder
             //pansit-pansitan
             [
                 'name' => 'Ulsimang Bato Decoction',
-                'treatment' => 'Lowers uric acid (Rheumatism and Gout)',
+
                 'description' => "Ulsimang Bato, also known as Pansit-Pansitan, is a herbal remedy known for its uric acid-lowering properties, making it effective in treating rheumatism and gout. This decoction provides a natural way to alleviate joint pain and inflammation.",
                 'status' => 'Active',
                 // 'ingredient' => [
@@ -1122,7 +1094,7 @@ class RemedyRemediesSeeder extends Seeder
             //pansit-pansitan
             [
                 'name' => 'Ulsimang Bato Salad',
-                'treatment' => 'Lowers uric acid (Rheumatism and Gout)',
+
                 'description' => "Ulsimang Bato Salad, made from fresh Pansit-Pansitan (Ulasimang Bato) leaves, helps manage uric acid levels and is used as a natural remedy for conditions like rheumatism and gout. This salad incorporates the healing properties of the plant into an easy-to-consume form.",
                 'status' => 'Active',
                 // 'ingredient' => [
@@ -1146,7 +1118,7 @@ class RemedyRemediesSeeder extends Seeder
             //Tanglad
             [
                 'name' => 'Tanglad Herbal Decoction',
-                'treatment' => 'Diarrhea',
+
                 'description' => "A decoction made from Tanglad leaves helps to alleviate diarrhea by reducing intestinal inflammation and promoting digestive health. The addition of ginger and sugar enhances its therapeutic effect and taste.",
                 'status' => 'Active',
                 // 'ingredient' => [
@@ -1177,7 +1149,7 @@ class RemedyRemediesSeeder extends Seeder
             //Kamatsili
             [
                 'name' => 'Kamatsili Herbal Decoction',
-                'treatment' => 'Indigestion',
+
                 'description' => "Kamatsili is a tropical tree with a spreading crown and sweet, edible pods. The leaves of Kamatsili are used in traditional medicine to aid digestion and treat various gastrointestinal issues. A decoction made from Kamatsili leaves helps to relieve indigestion by soothing the digestive tract and promoting healthy digestion.",
                 'status' => 'Active',
                 // 'ingredient' => [
@@ -1203,7 +1175,7 @@ class RemedyRemediesSeeder extends Seeder
             //Malunggay
             [
                 'name' => 'Malunggay Dietary Intake',
-                'treatment' => 'Constipation',
+
                 'description' => "Consuming cooked Malunggay leaves as part of a meal helps to relieve constipation due to their high fiber content.",
                 'status' => 'Active',
                 // 'ingredient' => [
@@ -1225,7 +1197,7 @@ class RemedyRemediesSeeder extends Seeder
             //Sambong
             [
                 'name' => 'Poultice',
-                'treatment' => "Abscesses,Boils",
+
                 'description' => "A poultice made from Sambong leaves helps to reduce inflammation and promote healing of abscesses and boils. The antimicrobial properties of the leaves make it an effective remedy for preventing infection",
                 'status' => 'Active',
                 // 'ingredient' => ['5 fresh Sambong leaves'],
@@ -1247,7 +1219,7 @@ class RemedyRemediesSeeder extends Seeder
             //Sambong
             [
                 'name' => 'Herbal Decoction',
-                'treatment' => "Acute and Chronic Cystitis",
+
                 'description' => "An herbal decoction made from Sambong leaves helps reduce inflammation and pain associated with cystitis. It also promotes urination, which aids in flushing out bacteria from the urinary tract.",
                 'status' => 'Active',
                 // 'ingredient' => ['1 cup of chopped fresh Sambong leaves', '2 glasses of water'],
@@ -1270,7 +1242,7 @@ class RemedyRemediesSeeder extends Seeder
             //Sambong
             [
                 'name' => 'Sambong Leaf Application',
-                'treatment' => "Headaches Due to Sinusitis",
+
                 'description' => "Sambong (Blumea balsamifera) leaves possess anti-inflammatory properties that can help alleviate headaches associated with sinusitis. The heat from the crushed leaves aids in relieving pressure and discomfort in the sinus areas.",
                 'status' => 'Active',
                 // 'ingredient' => ['5 fresh Sambong leaves', '2 glasses of water'],
@@ -1293,7 +1265,7 @@ class RemedyRemediesSeeder extends Seeder
             //Talumpunay
             [
                 'name' => 'Herbal Cigarette ',
-                'treatment' => "Asthma",
+
                 'description' => "Talumpunay leaves, when dried and rolled into cigarettes, can help alleviate asthma symptoms by relaxing the bronchial muscles and easing breathing difficulties.",
                 'status' => 'Active',
                 // 'ingredient' => ['2 dried Talumpunay leaves'],
@@ -1313,7 +1285,7 @@ class RemedyRemediesSeeder extends Seeder
             //Kantutay
             [
                 'name' => 'Herbal Decoction',
-                'treatment' => "Cough",
+
                 'description' => "A decoction made from Kantutay leaves and flowers helps to relieve cough and other respiratory symptoms. The plant's natural compounds have expectorant properties that aid in clearing mucus from the airways.",
                 'status' => 'Active',
                 // 'ingredient' => ['1 cup of chopped fresh leaves and flowers', '2 glasses of water'],
@@ -1337,7 +1309,7 @@ class RemedyRemediesSeeder extends Seeder
             //Alagaw
             [
                 'name' => 'Herbal Decoction',
-                'treatment' => "Cough",
+
                 'description' => "A decoction made from Alagaw leaves helps to relieve cough and soothe the throat. The addition of calamansi juice and sugar enhances its effectiveness and taste.",
                 'status' => 'Active',
                 // 'ingredient' => ['1 cup of chopped fresh leaves 2 glasses of water', '2 calamansi (for juice) 1 tablespoon sugar'],
@@ -1364,7 +1336,7 @@ class RemedyRemediesSeeder extends Seeder
             //Kilaw
             [
                 'name' => 'Juice Extract',
-                'treatment' => "Dandruff",
+
                 'description' => "The juice extracted from Kilaw rhizomes helps to reduce dandruff by cleansing the scalp and preventing fungal infections. The juice also nourishes the hair and scalp, promoting healthier hair growth.",
                 'status' => 'Active',
                 // 'ingredient' => ['Kilaw rhizomes'],
@@ -1385,7 +1357,7 @@ class RemedyRemediesSeeder extends Seeder
             //Kilaw
             [
                 'name' => 'Kilaw (Yellow Ginger) Tea',
-                'treatment' => "Flatulence or Gas pain",
+
                 'description' => "Kilaw, or yellow ginger, is an effective natural remedy for relieving flatulence and gas pain. Its carminative properties help reduce the formation of gas in the stomach and intestines, offering quick relief from discomfort.",
                 'status' => 'Active',
                 // 'ingredient' => ['1 piece of Kilaw (yellow ginger), about 2 inches in size', '2 glasses of water'],
@@ -1411,7 +1383,7 @@ class RemedyRemediesSeeder extends Seeder
             //Gugo
             [
                 'name' => 'Herbal Shampoo',
-                'treatment' => "Dandruff",
+
                 'description' => "A shampoo made from Gugo bark helps cleanse the scalp, remove dandruff, and strengthen the hair. The natural saponins in the bark create a gentle lather that cleanses without stripping the hair of its natural oils.",
                 'status' => 'Active',
                 // 'ingredient' => ['Gugo bark', 'Juice of 3 calamansi'],
@@ -1433,7 +1405,7 @@ class RemedyRemediesSeeder extends Seeder
             //Kampanilya
             [
                 'name' => 'Herbal Decoction',
-                'treatment' => "Constipation",
+
                 'description' => "An herbal decoction made from Kampanilya leaves helps to relieve constipation due to its laxative properties.",
                 'status' => 'Active',
                 // 'ingredient' => ['5 Kampanilya leaves', '2 glasses of water'],
@@ -1456,7 +1428,7 @@ class RemedyRemediesSeeder extends Seeder
             //Mansanilya
             [
                 'name' => 'Herbal Decoction',
-                'treatment' => "Cough",
+
                 'description' => "A decoction made from Mansanilya leaves and flowers helps soothe the throat and alleviate cough. Chamomile is known for its mild sedative effects, which can also promote relaxation.",
                 'status' => 'Active',
                 // 'ingredient' => ['1 cup of chopped dried leaves and flowers or 1½ cups of fresh leaves and flowers', '2 glasses of water'],
@@ -1479,7 +1451,7 @@ class RemedyRemediesSeeder extends Seeder
             //Banaba
             [
                 'name' => 'Banaba Tea',
-                'treatment' => "kidney and liver cleansing, regulate blood sugar, weight loss, anti-inflammatory and anti-parasitic benefits.",
+
                 'description' => "Banaba Tea, made from the leaves of the Banaba plant, is traditionally used to support kidney and liver health, reduce blood sugar, aid weight loss, and provide anti-inflammatory and anti-parasitic benefits.",
                 'status' => 'Active',
                 // 'ingredient' => ['Fresh or dried leaves, flowers, root, or bark of Banaba (choose one or a mix)', '3 cups of water (adjust depending on desired tea strength)', 'Optional: A sprig of lemongrass or a few slices of local citrus like calamansi for flavor'],
@@ -1509,7 +1481,7 @@ class RemedyRemediesSeeder extends Seeder
             //Serpentina
             [
                 'name' => 'Serpentina and Lemon Tea Recipe',
-                'treatment' => "Immune support, digestive health, and blood pressure management.",
+
                 'description' => "A soothing tea made with fresh Serpentina leaves and lemon, this recipe supports immune health, aids digestion, and helps manage blood pressure. Enjoy warm with optional honey for added sweetness",
                 'status' => 'Active',
                 // 'ingredient' => [
@@ -1540,7 +1512,7 @@ class RemedyRemediesSeeder extends Seeder
             //Gisol
             [
                 'name' => 'Poultice',
-                'treatment' => "Swollen glands due to mumps",
+
                 'description' => "A poultice made from chopped Gisol rhizomes helps to reduce swelling and relieve pain in the salivary glands.",
                 'status' => 'Active',
                 // 'ingredient' => ['Gisol rhizomes'],
@@ -1563,7 +1535,7 @@ class RemedyRemediesSeeder extends Seeder
             //Lumbang Bato
             [
                 'name' => 'Hot Compress',
-                'treatment' => "Rheumatism and joint pain",
+
                 'description' => "A hot compress made from Lumbang Bato leaves helps to reduce inflammation and relieve pain in the joints.",
                 'status' => 'Active',
                 // 'ingredient' => ['Lumbang Bato leaves'],
@@ -1583,7 +1555,7 @@ class RemedyRemediesSeeder extends Seeder
             //Tabako
             [
                 'name' => 'Herbal Decoction Shampoo',
-                'treatment' => "Ringworm (if head and hair are affected)",
+
                 'description' => "A shampoo made from a decoction of Tabako leaves helps to treat ringworm on the scalp by reducing fungal infections and cleansing the hair.",
                 'status' => 'Active',
                 // 'ingredient' => ['10 fresh Tabako leaves', '1/2 gallon of water'],
@@ -1605,7 +1577,7 @@ class RemedyRemediesSeeder extends Seeder
             //adelfia
             [
                 'name' => 'Mixture with Coconut Oil',
-                'treatment' => "Ringworm",
+
                 'description' => "A mixture of Adelfa bark, leaves, and coconut oil helps to reduce fungal infections and promote healing of the skin affected by ringworm.",
                 'status' => 'Active',
                 // 'ingredient' => ['One-foot long branch of Adelfa 1 cup of chopped fresh young leaves', '5 drops of coconut oil'],

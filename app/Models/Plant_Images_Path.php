@@ -18,6 +18,6 @@ class Plant_Images_Path extends Model
 
     public function plant(): BelongsTo
     {
-        return $this->belongsTo(Plant_Plants::class);
+        return $this->belongsTo(Plant_Plants::class, 'plant_id', 'id');
     }
 }
