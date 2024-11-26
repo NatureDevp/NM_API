@@ -94,3 +94,14 @@ Route::middleware('auth:sanctum')->prefix('v1')->group(function () {
     // Logout API
     Route::post('users/logout', [AuthenticationController::class, 'logout']);
 });
+
+
+
+Route::prefix('v2')->group(function () {
+
+    Route::apiResource('plants', PlantPlantsController::class);
+    Route::apiResource('remedies', RemedyRemediesController::class);
+
+
+    Route::get('images/{imageName}', [ImageController::class, 'path']);
+});
